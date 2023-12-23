@@ -6,6 +6,7 @@ import Start from "./pages/Start";
 import CustonTitleBar from "./components/layout/CustomTitleBar";
 import { interfaceStore } from "./state/stores/interface.store";
 import Dashboard from "./pages/Dashboard";
+import Sidebar from "./components/layout/Sidebar";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: <Sidebar><Dashboard /></Sidebar>,
   },
 ]);
 
