@@ -10,7 +10,7 @@ const Start = () => {
 
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const { theme, changeTheme } = interfaceStore();
+    const { theme, changeTheme,changeLang, lang } = interfaceStore();
 
 
     //Sandbox
@@ -23,10 +23,16 @@ const Start = () => {
                 {t('test')}
             </button><br />
             <button onClick={() => navigate('/dashboard')}>
-                To dashboard
+                To dashboard {lang}
             </button><br/>
-            <button onClick={() => i18n.changeLanguage('pt')}>
-                change lang to es
+            <button onClick={() => changeLang('es-ES')}>
+                change lang to ES
+            </button><br/>
+            <button onClick={() => changeLang('pt-PT')}>
+                change lang to PT
+            </button><br/>
+            <button onClick={() => changeLang('en-EN')}>
+                change lang to EN
             </button>
         </div>
     )
