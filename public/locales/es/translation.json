@@ -4,7 +4,12 @@
 "settings": "configuraciones",
 "history": "historial",
 "interface": "interfaz",
-"theme": "Tema",
+"theme": "tema",
 "change": "cambiar",
-"joinedAgo": "se unió hace {{months}} meses"
+"joinedAgo": "se unió hace {{months}} meses",
+"board": "tablero",
+"projects": "proyectos",
+"messages": "mensajes",
+"logout": "salir",
+"user": "usuario"
 }

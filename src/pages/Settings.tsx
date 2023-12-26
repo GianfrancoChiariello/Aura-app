@@ -12,7 +12,7 @@ import { interfaceStore } from "../state/stores/interface.store";
 
 const Settings = () => {
     const { state } = useLocation();
-    const {lang} = interfaceStore();
+    const {lang,changeTheme} = interfaceStore();
     const {t} = useTranslation();
     const [tabSelected, setTabSelected] = useState(state?.tab || 0);
 
@@ -41,6 +41,7 @@ const Settings = () => {
                         value: 'Dark',
                         anchor: '/dist',
                         component: null,
+                        action: changeTheme,
                         button: t('change')
                     },
                     {

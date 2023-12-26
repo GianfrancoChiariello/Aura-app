@@ -6,5 +6,10 @@
     "interface": "interface",
     "theme": "theme",
     "change": "change",
-    "joinedAgo": "joined {{months}} months ago"
+    "joinedAgo": "joined {{months}} months ago",
+    "board": "board",
+    "projects": "projects",
+    "messages": "messages",
+    "logout": "logout",
+    "user": "user"
     }

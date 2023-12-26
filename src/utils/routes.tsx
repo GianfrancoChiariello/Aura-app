@@ -5,6 +5,7 @@ import Start from "../pages/Start";
 import Dashboard from "../pages/Dashboard";
 import Sidebar from "../components/layout/Sidebar";
 import Settings from "../pages/Settings";
+import NotFound from "../pages/404";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     {
         path: "/settings",
         element: <Sidebar><Settings/></Sidebar>
+    },
+    {
+        path: "*",
+        element: <Sidebar><NotFound/></Sidebar>
     }
 ]);
 

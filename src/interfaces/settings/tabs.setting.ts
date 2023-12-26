@@ -6,6 +6,7 @@ export interface Option {
     value: String,
     anchor?: string | null,
     component?: ReactNode | null,
+    action?: VoidFunction | null,
     button: string
 }
 

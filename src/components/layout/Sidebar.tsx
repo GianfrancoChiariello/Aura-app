@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Tooltip from '@mui/material/Tooltip';
 import Zoom from '@mui/material/Zoom';
 import Badge from '@mui/material/Badge';
+import { capitalize } from "../../utils/functions";
 
 const Sidebar = ({ children }: { children: ReactNode }) => {
 
@@ -17,31 +18,31 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
     const items = [
         {
             icon: '../../../src/assets/icons/home_icon.svg',
-            item: t('Dashboard'),
+            item: t('dashboard'),
             anchor: '/dashboard',
             notification: false
         },
         {
             icon: '../../../src/assets/icons/chart_icon.svg',
-            item: t('Projects'),
+            item: t('projects'),
             anchor: '/projects',
             notification: false
         },
         {
             icon: '../../../src/assets/icons/message_icon.svg',
-            item: t('Messages'),
+            item: t('messages'),
             anchor: '/messages',
             notification: true
         },
         {
             icon: '../../../src/assets/icons/stats_icon.svg',
-            item: t('Board'),
+            item: t('board'),
             anchor: '/board',
             notification: false
         },
         {
             icon: '../../../src/assets/icons/notification_icon.svg',
-            item: t('Notification'),
+            item: t('notification'),
             anchor: '/notificaction',
             notification: false
         },
@@ -50,20 +51,20 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
     const subItems = [
         {
             icon: '../../../src/assets/icons/user_icon.svg',
-            item: t('User'),
+            item: t('user'),
             anchor: '/user',
             notification: false
         },
         {
             icon: '../../../src/assets/icons/setting_icon.svg',
-            item: t('Settings'),
+            item: t('settings'),
             anchor: '/settings',
             state: {tab: 0},
             notification: false
         },
         {
             icon: '../../../src/assets/icons/logout_icon.svg',
-            item: t('Logout'),
+            item: t('logout'),
             anchor: '/',
             notification: false
         }
@@ -86,7 +87,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                             items.map((item, index) => (
                                 <div className="flex justify-between items-center h-11 transition-all group hover:cursor-pointer relative" onClick={() => navigate(item.anchor)} key={index}>
                                     <Tooltip
-                                        title={item.item}
+                                        title={capitalize(item.item)}
                                         disableHoverListener={sideBar !== '80px'}
                                         TransitionComponent={Zoom}
                                         placement="right"
@@ -105,7 +106,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                                         </Badge>
                                             </div>
                                     </Tooltip>
-                                    <span className={`ml-3 text-lg font-semibold text-[#D1D1D1] group-hover:text-white ${item.anchor == pathname && 'text-white'}`}>{item.item}</span>
+                                    <span className={`ml-3 text-lg font-semibold capitalize text-[#D1D1D1] group-hover:text-white ${item.anchor == pathname && 'text-white'}`}>{item.item}</span>
                                 </div>
                             ))
                         }
@@ -115,7 +116,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                             subItems.map((item, index) => (
                                 <div className={`flex justify-between items-center h-11 transition-all group hover:cursor-pointer relative ${item.item == 'Logout' && 'mt-7'}`} onClick={() => navigate(item.anchor, {state: item.state})} key={index}>
                                     <Tooltip
-                                        title={item.item}
+                                        title={capitalize(item.item)}
                                         disableHoverListener={sideBar !== '80px'}
                                         TransitionComponent={Zoom}
                                         placement="right"
@@ -134,7 +135,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                                         </Badge>
                                         </div>
                                     </Tooltip>
-                                    <span className={`ml-3 text-lg font-semibold text-[#D1D1D1] group-hover:text-white ${item.anchor == pathname && 'text-white'}`}>{item.item}</span>
+                                    <span className={`ml-3 text-lg font-semibold capitalize text-[#D1D1D1] group-hover:text-white ${item.anchor == pathname && 'text-white'}`}>{item.item}</span>
                                 </div>
                             ))
                         }

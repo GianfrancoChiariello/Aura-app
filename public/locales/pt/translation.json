@@ -6,6 +6,10 @@
 "interface": "Interface",
 "theme": "Tema",
 "change": "mudar",
-"joinedAgo": "ingressou em {{months}} meses atrás"
-
+"projects": "projetos",
+"joinedAgo": "ingressou em {{months}} meses atrás",
+"board": "quadro",
+"messages": "mensagens",
+"logout": "sair",
+"user": "usuário"
 }

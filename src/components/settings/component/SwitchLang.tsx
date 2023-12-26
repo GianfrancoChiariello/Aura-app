@@ -26,7 +26,7 @@ const SwitchLang = () => {
             color="primary"
             value={lang}
             exclusive
-            onChange={(_e, newValue) => changeLang(newValue)}
+            onChange={(_e, newValue) => newValue ? changeLang(newValue) : null}
             aria-label="Platform"
             sx={{
                 '& .MuiToggleButtonGroup-grouped': {

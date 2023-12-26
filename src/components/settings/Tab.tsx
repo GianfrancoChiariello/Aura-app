@@ -10,7 +10,7 @@ const TabC = ({item} : {item: Option}) => {
             </div>
             {
                 item.anchor ? (
-                    <button className="bg-[#4C6198] py-1 px-2 rounded-lg font-semibold hover:opacity-85">{item.button}</button>
+                    <button className="bg-[#4C6198] py-1 px-2 rounded-lg  hover:opacity-85" onClick={item.action as VoidFunction}>{item.button}</button>
                 ) : item.component
             }
         </div>

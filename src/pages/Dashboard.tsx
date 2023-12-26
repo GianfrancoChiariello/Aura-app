@@ -6,15 +6,17 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import {interfaceStore} from '../state/stores/interface.store'
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
 
     const { sideBar } = interfaceStore();
+    const navigate = useNavigate();
 
     return (
         <div className="rounded-tl-xl dark:bg-[#3A3A3A]  grid gap-12 grid-rows-[100px_minmax(190px,_100px)_1fr] pl-8 pr-5 pb-9">
             <div className={`flex justify-between items-center ${sideBar == '80px' ? '2xl:pl-44' : '2xl:pl-16'} transition-all`}>
-                <div className='flex items-center gap-3 bg-[#242424] px-2 py-2 xl:px-3 xl:py-2 rounded-3xl'>
+                <div className='flex items-center gap-3 bg-[#242424] px-2 py-2 xl:px-3 xl:py-2 rounded-3xl cursor-pointer hover:opacity-95'>
                     <Avatar alt="Remy Sharp" src="" sx={{ width: '30px', height: '30px' }} />
                     <span className="hidden xl:block">Enviroment</span>
                 </div>
@@ -55,7 +57,7 @@ const Dashboard = () => {
                     </IconButton>
                 </div>
                 <div>
-                    <div className='flex items-center gap-3 bg-[#242424] px-3 py-2 rounded-3xl'>
+                    <div className='flex items-center gap-3 bg-[#242424] px-3 py-2 rounded-3xl cursor-pointer hover:opacity-95' onClick={() => navigate('/settings',{state: {tab: 0}})}>
                         Gianfranco
                         <Avatar alt="Remy Sharp" src="" sx={{ width: '30px', height: '30px' }} />
                     </div>
