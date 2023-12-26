@@ -1,3 +1,11 @@
 {
-        "test": "test traducido pt"
+"test": "test traducido pt",
+"notification": "notificação",
+"settings": "configurações",
+"history": "história",
+"interface": "Interface",
+"theme": "Tema",
+"change": "mudar",
+"joinedAgo": "ingressou em {{months}} meses atrás"
+
 }
