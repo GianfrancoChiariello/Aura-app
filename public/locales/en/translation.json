@@ -1,3 +1,15 @@
-{   
-    "test": "test traducido en"
-}
+{
+    "test": "test traducido es",
+    "notification": "notification",
+    "settings": "settings",
+    "history": "history",
+    "interface": "interface",
+    "theme": "theme",
+    "change": "change",
+    "joinedAgo": "joined {{months}} months ago",
+    "board": "board",
+    "projects": "projects",
+    "messages": "messages",
+    "logout": "logout",
+    "user": "user"
+    }

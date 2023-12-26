@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { locale } from '@tauri-apps/api/os';
 import { getTheme } from '../../utils/tauri.tools';
+import i18n from "i18next";
 
 
 interface interfaceType {
@@ -19,8 +20,8 @@ const SystemTheme = await getTheme()
 export const interfaceStore = create(
     persist<interfaceType>((set, get) => ({
         theme: SystemTheme as string,
-        sideBar: '80px',
         lang: Systemlocale as string,
+        sideBar: '80px',
         changeTheme: () => {
             set({ theme: get().theme == 'dark' ? 'light' : 'dark' })
         },
@@ -28,7 +29,8 @@ export const interfaceStore = create(
             set({ sideBar: get().sideBar == '80px' ? '250px' : '80px' })
         },
         changeLang: (param) => {
-            set({ theme: param })
+            i18n.changeLanguage(param)
+            set({ lang: param })
         },
     }), { name: 'interface' })
 )

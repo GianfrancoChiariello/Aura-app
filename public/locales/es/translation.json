@@ -1,3 +1,15 @@
 {
-        "test": "test traducido es"
+"test": "test traducido es",
+"notification": "notifcacions",
+"settings": "configuraciones",
+"history": "historial",
+"interface": "interfaz",
+"theme": "tema",
+"change": "cambiar",
+"joinedAgo": "se unió hace {{months}} meses",
+"board": "tablero",
+"projects": "proyectos",
+"messages": "mensajes",
+"logout": "salir",
+"user": "usuario"
 }
