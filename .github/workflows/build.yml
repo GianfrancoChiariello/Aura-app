@@ -32,12 +32,10 @@ jobs:
         id: build_changelog
         run: echo "changelog=- ADD CHANGELOG" >> $GITHUB_OUTPUT
 
-      - name: Node.js setup
-        uses: actions/setup-node@v4
-        # NOTE: enterprise developers may hard code a version
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.4.0
         with:
-          node-version: latest
-          # node-version-file: '.nvmrc'
+          version: latest
 
       - name: Install Rust toolchain
         run: |
