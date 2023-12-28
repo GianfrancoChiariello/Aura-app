@@ -10,14 +10,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [windows-latest]
         include:
-          - os: ubuntu-latest
-            rust_target: x86_64-unknown-linux-gnu
-          - os: macos-latest
-            rust_target: x86_64-apple-darwin
-          - os: macos-latest
-            rust_target: aarch64-apple-darwin
           - os: windows-latest
             rust_target: x86_64-pc-windows-msvc
     runs-on: ${{ matrix.platform }}
@@ -25,8 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # for projects that use labels and PRs,
-      # try https://github.com/mikepenz/release-changelog-builder-action instead
       # TODO: use API to collect commit messages
       - name: Build Changelog
         id: build_changelog
