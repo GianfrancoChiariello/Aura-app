@@ -6,9 +6,9 @@ import i18n from "i18next";
 
 
 interface interfaceType {
-    theme: Promise<String | null> | String,
+    theme: any,
     sideBar: String,
-    lang: Promise<String | null> | String,
+    lang: any,
     changeTheme: () => void,
     changeSize: () => void,
     changeLang: (param? : string) => void,
