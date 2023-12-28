@@ -11,10 +11,27 @@ import Dashboard from "./pages/Dashboard";
 import Sidebar from "./components/layout/Sidebar";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/404";
+import { locale } from '@tauri-apps/api/os';
+import { getTheme } from "./utils/tauri.tools";
+import { useEffect } from "react";
 
 function App() {
 
-  const { theme } = interfaceStore();
+  const { theme,changeTheme, changeLang } = interfaceStore();
+
+  useEffect(() => {
+    const localStore = localStorage.getItem("interface");
+
+    async function initial() {
+      let theme = await getTheme()
+      let lang = await locale()
+
+      changeTheme(theme);
+      changeLang(lang!)
+    }
+
+    !localStore && initial();
+  },[])
 
   const router = createBrowserRouter([
     {
