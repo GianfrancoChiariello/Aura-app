@@ -7,10 +7,9 @@ import {interfaceStore} from './state/stores/interface.store';
 i18n
     .use(initReactI18next)
     .use(Backend)
-    .use(LanguageDetector)
     .init({
         debug: true,
-        lng: interfaceStore.getState().lang as string,
+        lng: interfaceStore.getState().lang,
         fallbackLng: "en",
         interpolation: {
             escapeValue: false

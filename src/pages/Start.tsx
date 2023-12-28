@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import i18n from "i18next";
 
-
 //tests
 
 const Start = () => {
@@ -25,8 +24,8 @@ const Start = () => {
             <button onClick={() => navigate('/dashboard')}>
                 To dashboard {lang}
             </button><br/>
-            <button onClick={() => changeLang('es-ES')}>
-                change lang to ES
+            <button onClick={() => i18n.changeLanguage('pt-PT')}>
+                change lang to PT
             </button><br/>
             <button onClick={() => changeLang('pt-PT')}>
                 change lang to PT

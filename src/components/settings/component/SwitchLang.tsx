@@ -17,7 +17,7 @@ const SwitchLang = () => {
         },
         {
             title: 'PT',
-            value: 'pt-PT'
+            value: 'pt-BR'
         },
     ]
 

@@ -17,31 +17,31 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
 
     const items = [
         {
-            icon: '../../../src/assets/icons/home_icon.svg',
+            icon: '/assets/icons/home_icon.svg',
             item: t('dashboard'),
             anchor: '/dashboard',
             notification: false
         },
         {
-            icon: '../../../src/assets/icons/chart_icon.svg',
+            icon: '/assets/icons/chart_icon.svg',
             item: t('projects'),
             anchor: '/projects',
             notification: false
         },
         {
-            icon: '../../../src/assets/icons/message_icon.svg',
+            icon: '/assets/icons/message_icon.svg',
             item: t('messages'),
             anchor: '/messages',
             notification: true
         },
         {
-            icon: '../../../src/assets/icons/stats_icon.svg',
+            icon: '/assets/icons/stats_icon.svg',
             item: t('board'),
             anchor: '/board',
             notification: false
         },
         {
-            icon: '../../../src/assets/icons/notification_icon.svg',
+            icon: '/assets/icons/notification_icon.svg',
             item: t('notification'),
             anchor: '/notificaction',
             notification: false
@@ -50,20 +50,20 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
 
     const subItems = [
         {
-            icon: '../../../src/assets/icons/user_icon.svg',
+            icon: '/assets/icons/user_icon.svg',
             item: t('user'),
             anchor: '/user',
             notification: false
         },
         {
-            icon: '../../../src/assets/icons/setting_icon.svg',
+            icon: '/assets/icons/setting_icon.svg',
             item: t('settings'),
             anchor: '/settings',
             state: {tab: 0},
             notification: false
         },
         {
-            icon: '../../../src/assets/icons/logout_icon.svg',
+            icon: '/assets/icons/logout_icon.svg',
             item: t('logout'),
             anchor: '/',
             notification: false
@@ -75,7 +75,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
             <div className="dark:bg-[#111111] relative">
                 <div className={`absolute top-24 -right-[12px] z-50 rounded-full bg-[#4C6198] p-1 cursor-pointer hover:bg-[#41568C] ${sideBar !== '80px' && 'rotate-180'} transition-all`} onClick={changeSize}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg>
                 </div>
                 <div className="flex flex-col items-start gap-7 min-w-20 overflow-hidden h-full">

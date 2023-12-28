@@ -5,13 +5,19 @@ import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import AvatarGroup from '@mui/material/AvatarGroup';
-import {interfaceStore} from '../state/stores/interface.store'
+import { interfaceStore } from '../state/stores/interface.store'
 import { useNavigate } from 'react-router-dom';
+/* import usePaLM from '../hooks/usePaLM'; */
+/* import { useState } from 'react'; */
 
 const Dashboard = () => {
 
+    /* const [input, setInput] = useState<any>(''); */
     const { sideBar } = interfaceStore();
+    /* const { message, sendMessage } = usePaLM() */;
     const navigate = useNavigate();
+
+
 
     return (
         <div className="rounded-tl-xl dark:bg-[#3A3A3A]  grid gap-12 grid-rows-[100px_minmax(190px,_100px)_1fr] pl-8 pr-5 pb-9">
@@ -57,14 +63,18 @@ const Dashboard = () => {
                     </IconButton>
                 </div>
                 <div>
-                    <div className='flex items-center gap-3 bg-[#242424] px-3 py-2 rounded-3xl cursor-pointer hover:opacity-95' onClick={() => navigate('/settings',{state: {tab: 0}})}>
+                    <div className='flex items-center gap-3 bg-[#242424] px-3 py-2 rounded-3xl cursor-pointer hover:opacity-95' onClick={() => navigate('/settings', { state: { tab: 0 } })}>
                         Gianfranco
                         <Avatar alt="Remy Sharp" src="" sx={{ width: '30px', height: '30px' }} />
                     </div>
                 </div>
             </div>
             <div className="grid  lg:grid-cols-5 grid-cols-4 gap-10">
-                <div className="border border-pink-500 col-span-1 lg:col-span-2 rounded-2xl"></div>
+                <div className="border border-pink-500 col-span-1 lg:col-span-2 rounded-2xl">
+                    {/*  <input type='text' value={input} onChange={(e) => setInput(e.target.value)}/>
+                    <button onClick={() => sendMessage(input)}> send PaLM</button>
+                    <span>{message as string}</span> */}
+                </div>
                 <div className="border border-red-500 rounded-2xl"></div>
                 <div className="border border-blue-500 rounded-2xl"></div>
                 <div className="border border-violet-700 rounded-2xl"></div>
