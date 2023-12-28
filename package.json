@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "tauri": "tauri",
     "nvmrc": "node -v > .nvmrc",
-    "predev": "yarn nvmrc"
+    "predev": "pnpm nvmrc"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

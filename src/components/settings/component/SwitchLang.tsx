@@ -9,7 +9,7 @@ const SwitchLang = () => {
     const buttons = [
         {
             title: 'EN',
-            value: 'en-EN'
+            value: 'en-US'
         },
         {
             title: 'ES',
@@ -17,7 +17,7 @@ const SwitchLang = () => {
         },
         {
             title: 'PT',
-            value: 'pt-BR'
+            value: 'pt-PT'
         },
     ]
 
