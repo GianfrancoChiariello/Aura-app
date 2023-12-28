@@ -6,21 +6,21 @@ import i18n from "i18next";
 
 
 interface interfaceType {
-    theme: String,
+    theme: any,
     sideBar: String,
-    lang: String,
+    lang: any,
     changeTheme: () => void,
     changeSize: () => void,
     changeLang: (param? : string) => void,
 }
 
-const Systemlocale = await locale();
-const SystemTheme = await getTheme()
+const Systemlocale =  locale();
+const SystemTheme =  getTheme()
 
 export const interfaceStore = create(
     persist<interfaceType>((set, get) => ({
-        theme: SystemTheme as string,
-        lang: Systemlocale as string,
+        theme: SystemTheme,
+        lang: Systemlocale,
         sideBar: '80px',
         changeTheme: () => {
             set({ theme: get().theme == 'dark' ? 'light' : 'dark' })
