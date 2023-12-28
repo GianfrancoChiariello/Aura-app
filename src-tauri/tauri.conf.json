@@ -87,9 +87,14 @@
     },
     "updater": {
       "active": true,
-      "endpoints": [],
+      "endpoints": [
+        "https://releases.myapp.com/{{target}}/{{arch}}/{{current_version}}"
+      ],
       "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IHJzaWduIGVuY3J5cHRlZCBzZWNyZXQga2V5ClJXUlRZMEl5VnVnUVgyTGU5UnFwWG5jMSs5RUpIRUo4ZWt5ekNINzYrZTFKMXMyazQ0SUFBQkFBQUFBQUFBQUFBQUlBQUFBQXlBK3MwVkpoRythdDRYR3BvSnJ4ZloxMWVla3p0b2lkMXUvMzcraUJLTjMxMllOZGpaWXo4VFluQlpXK3hhM2NDYjZuL0REaHUzd1Q0L0FKWWROaHN4emVtS2t5TGlTYlFHRDErQ1I2cWhxbHlMcWUxcEpZT2FobURzT3ZDOXYxUWVqY2RncGMvd0E9Cg=="
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNGRTU2QTI0QjMyNUYyMzUKUldRMThpV3pKR3JsUHdpRm9WQ2JpS2g0OFNid3N4cEREYmNNTmIzSStqUjZrRm9QYkF0eWFIUnQK",
+      "windows": {
+        "installMode": "passive"
+      }
     },
     "windows": [
       {
