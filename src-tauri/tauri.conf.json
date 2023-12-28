@@ -6,8 +6,8 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "Aura-app",
-    "version": "0.0.0"
+    "productName": "aura-app",
+    "version": "0.0.1"
   },
   "tauri": {
     "allowlist": {
@@ -78,7 +78,7 @@
         "digestAlgorithm": "sha256",
         "timestampUrl": "",
         "wix": {
-          "language": ["es-ES","en-EN","pt-BR"]
+          "language": ["es-ES","en-US","pt-PT"]
         }
       }
     },
@@ -87,10 +87,6 @@
     },
     "updater": {
       "active": true,
-      "endpoints": [
-        "https://releases.myapp.com/{{target}}/{{arch}}/{{current_version}}"
-      ],
-      "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNGRTU2QTI0QjMyNUYyMzUKUldRMThpV3pKR3JsUHdpRm9WQ2JpS2g0OFNid3N4cEREYmNNTmIzSStqUjZrRm9QYkF0eWFIUnQK",
       "windows": {
         "installMode": "passive"

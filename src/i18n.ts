@@ -8,7 +8,7 @@ i18n
     .use(Backend)
     .init({
         debug: true,
-        lng: interfaceStore.getState().lang as string,
+        lng: interfaceStore.getState().lang as string || "en",
         fallbackLng: "en",
         interpolation: {
             escapeValue: false
