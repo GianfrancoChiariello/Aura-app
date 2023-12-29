@@ -14,11 +14,11 @@ interface interfaceType {
 
 export const interfaceStore = create(
     persist<interfaceType>((set, get) => ({
-        theme: '',
-        lang: '',
+        theme: 'dark',
+        lang: 'en-US',
         sideBar: '80px',
-        changeTheme: (param) => {
-            set({ theme: param ? param : get().theme == 'dark' ? 'light' : 'dark' })
+        changeTheme: () => {
+            set({ theme: get().theme == 'dark' ? 'light' : 'dark'})
         },
         changeSize: () => {
             set({ sideBar: get().sideBar == '80px' ? '250px' : '80px' })
