@@ -17,7 +17,7 @@ const Start = () => {
 
     return (
         <div className="w-full h-full bg-white dark:bg-zinc-900 dark:text-white">
-            <p>actualizado</p>
+            <p>actualizado v2</p>
             {theme} <br />
             <button onClick={() => changeTheme()}>
                 {t('test')}
