@@ -9,7 +9,7 @@ import OnlineUsers from '../components/dashboard/OnlineUsers';
 import BannerUser from '../components/dashboard/BannerUser';
 import Box from '../components/dashboard/Box';
 import StepperModal from '../components/layout/StepperModal';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Dashboard = () => {
 
