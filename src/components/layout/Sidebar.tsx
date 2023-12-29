@@ -50,12 +50,12 @@ const Sidebar = memo(({ children }: { children: ReactNode }) => {
     ]
 
     const subItems = [
-        {
+/*         {
             icon: '/assets/icons/user_icon.svg',
             item: t('user'),
             anchor: '/user',
             notification: false
-        },
+        }, */
         {
             icon: '/assets/icons/setting_icon.svg',
             item: t('settings'),
@@ -112,10 +112,10 @@ const Sidebar = memo(({ children }: { children: ReactNode }) => {
                             ))
                         }
                     </div>
-                    <div className="flex flex-col flex-1 items-start justify-end pb-4 gap-7 w-full">
+                    <div className="flex flex-col flex-1 items-start justify-end pb-4 gap-10 w-full">
                         {
                             subItems.map((item, index) => (
-                                <div className={`flex justify-between items-center h-11 transition-all group hover:cursor-pointer relative ${item.item == 'Logout' && 'mt-7'}`} onClick={() => navigate(item.anchor, {state: item.state})} key={index}>
+                                <div className={`flex justify-between items-center h-11 transition-all group hover:cursor-pointer relative`} onClick={() => navigate(item.anchor, {state: item.state})} key={index}>
                                     <Tooltip
                                         title={capitalize(item.item)}
                                         disableHoverListener={sideBar !== '80px'}

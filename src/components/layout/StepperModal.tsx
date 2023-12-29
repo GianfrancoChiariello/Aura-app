@@ -5,7 +5,7 @@ import Modal from '@mui/material/Modal';
 import { ReactNode } from 'react';
 
 const steps = [
-  'Select master blaster campaign settings',
+  'Select campaign settings',
   'Create an ad group',
   'Create an ad',
 ];
@@ -18,10 +18,9 @@ const StepperModal = ({ open, action, children }: { open: boolean, action: any, 
       <Modal
         open={open}
         onClose={() => action(false)}
-        aria-labelledby="keep-mounted-modal-title"
-        aria-describedby="keep-mounted-modal-description"
       >
-        <div className='border border-red-400 w-[690px] h-[670px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4'>
+        <div className='w-[690px] h-[670px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4 bg-[#474747] rounded-2xl'>
+          <h1 className='font-semibold text-3xl text-white text-center my-8'>Create new project</h1>
           <Stepper activeStep={1} alternativeLabel>
             {steps.map((label) => (
               <Step key={label}>
@@ -29,6 +28,9 @@ const StepperModal = ({ open, action, children }: { open: boolean, action: any, 
               </Step>
             ))}
           </Stepper>
+          <div className='w-full'>
+
+          </div>
         </div>
       </Modal>
       {children}
