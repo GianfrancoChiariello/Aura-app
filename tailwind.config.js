@@ -5,11 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   variants: {
-    scrollbar: 'dark'
+    scrollbar: 'dark',
   },
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'custom-gray':'#555555',
+      }
+    },
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),

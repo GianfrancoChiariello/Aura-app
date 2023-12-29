@@ -7,8 +7,9 @@ import Tooltip from '@mui/material/Tooltip';
 import Zoom from '@mui/material/Zoom';
 import Badge from '@mui/material/Badge';
 import { capitalize } from "../../utils/functions";
+import { memo } from "react";
 
-const Sidebar = ({ children }: { children: ReactNode }) => {
+const Sidebar = memo(({ children }: { children: ReactNode }) => {
 
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -94,7 +95,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                                         arrow
                                         disableInteractive
                                     >
-                                        <div className={`min-w-20 flex justify-center ${sideBar == '80px' && item.anchor == pathname ? 'after:block' : 'after:hidden'} after:w-2 after:h-14 after:bg-[#4C6198] after:absolute after:-top-2 after:left-[74px] after:rounded-l-xl`}>
+                                        <div className={`min-w-20 flex justify-center after:transition-all ${sideBar == '80px' && item.anchor == pathname ? 'after:scale-100' : 'after:scale-0'} after:w-2 after:h-14 after:bg-[#4C6198] after:absolute after:-top-2 after:left-[74px] after:rounded-l-xl`}>
                                         <Badge badgeContent={" "} invisible={!item.notification as boolean} variant="dot" overlap="circular" sx={{
                                                 '& .MuiBadge-badge' : {
                                                     backgroundColor: '#4C6198',
@@ -123,7 +124,7 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
                                         arrow
                                         disableInteractive
                                     >
-                                        <div className={`min-w-20 flex justify-center ${sideBar == '80px' && item.anchor == pathname ? 'after:block' : 'after:hidden'} after:w-2 after:h-14 after:bg-[#4C6198] after:absolute after:-top-2 after:left-[74px] after:rounded-l-xl`}>
+                                        <div className={`min-w-20 flex justify-center after:transition-all ${sideBar == '80px' && item.anchor == pathname ? 'after:scale-100' : 'after:scale-0'} after:w-2 after:h-14 after:bg-[#4C6198] after:absolute after:-top-2 after:left-[74px] after:rounded-l-xl`}>
                                         <Badge badgeContent={" "} invisible={!item.notification as boolean} variant="dot" overlap="circular" sx={{
                                             '& .MuiBadge-badge' : {
                                                 backgroundColor: '#4C6198',
@@ -145,6 +146,6 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
             {children}
         </div>
     )
-}
+})
 
 export default Sidebar
