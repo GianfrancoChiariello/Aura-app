@@ -1,60 +1,53 @@
 import { interfaceStore } from "../state/stores/interface.store"
 import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next';
-import i18n from "i18next";
 import { checkUpdate, installUpdate } from "@tauri-apps/api/updater";
 import { relaunch } from "@tauri-apps/api/process";
-import { listen } from "@tauri-apps/api/event";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 //tests
 
 const Start = () => {
-
     const navigate = useNavigate();
-    const { t } = useTranslation();
-    const { theme, changeTheme, changeLang, lang } = interfaceStore();
+    const { lang } = interfaceStore();
+    const [textUpdate, setTextUpdate] = useState("")
+    const [recentUpdate, setRecentUpdate] = useState("")
+    const [version, setVersion] = useState("")
 
     //Sandbox
+    function startInstall(newVersion: any) {
+        setTextUpdate(`Installin update ${newVersion}, Will relaunch afterwards`)
+        installUpdate().then(relaunch);
+    }
 
     useEffect(() => {
-        listen("tauri://update-available", function (res) {
-            console.log("New version available: ", res);
-        });
-    }, [])
-
-    const handleUpdate = async () => {
-        try {
-            const { shouldUpdate } = await checkUpdate();
+        checkUpdate().then(({ shouldUpdate, manifest }: any) => {
             if (shouldUpdate) {
-                await installUpdate();
-                await relaunch();
+                alert("should update!")
+                const { version, body } = manifest;
+                setVersion(version)
+                setRecentUpdate(`v${version} y ${body}`)
             }
-        } catch (error) {
-            console.log(error);
-        }
-    }
+        });
+    }, []);
 
     return (
         <div className="w-full h-full bg-white dark:bg-zinc-900 dark:text-white">
-            <p>actualizado v4</p>
-            <button onClick={handleUpdate}>actualizar</button>
-            {theme} <br />
-            <button onClick={() => changeTheme()}>
-                {t('test')}
-            </button><br />
+            <p>actualizado v {version}</p>
+            <br /><br />
             <button onClick={() => navigate('/dashboard')}>
                 To dashboard {lang}
-            </button><br />
-            <button onClick={() => i18n.changeLanguage('pt-PT')}>
-                change lang to PT
-            </button><br />
-            <button onClick={() => changeLang('pt-PT')}>
-                change lang to PT
-            </button><br />
-            <button onClick={() => changeLang('en-EN')}>
-                change lang to EN
-            </button>
+            </button><br /><br />
+
+            <h1>{textUpdate}</h1><br />
+
+
+
+            <div>
+                <h2>Hay updates?: {recentUpdate}</h2>
+                <button onClick={() => startInstall(version)}>
+                    Start install
+                </button>
+            </div>
         </div>
     )
 }
