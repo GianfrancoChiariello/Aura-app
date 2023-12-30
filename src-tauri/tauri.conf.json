@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "aura-app",
-    "version": "1.1.4"
+    "version": "1.1.5"
   },
   "tauri": {
     "allowlist": {
@@ -89,7 +89,7 @@
       "active": true,
       "endpoints": ["https://gist.githubusercontent.com/GianfrancoChiariello/ee183e7b0cbdfd151fa271f5ffd77c75/raw"],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNGRTU2QTI0QjMyNUYyMzUKUldRMThpV3pKR3JsUHdpRm9WQ2JpS2g0OFNid3N4cEREYmNNTmIzSStqUjZrRm9QYkF0eWFIUnQK",
-      "dialog": true,
+      "dialog": false,
       "windows": {
         "installMode": "basicUi"
       }
