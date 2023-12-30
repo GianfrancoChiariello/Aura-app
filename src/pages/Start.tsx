@@ -9,7 +9,7 @@ const Start = () => {
 
     return (
         <div className="w-full h-full bg-white dark:bg-zinc-900 dark:text-white">
-            <p>pre actualizado v1.8</p>
+            <p>pre actualizado v1.9</p>
             <br /><br />
             <button onClick={() => navigate('/dashboard')}>
                 To dashboard {lang}
