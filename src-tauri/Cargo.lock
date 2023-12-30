@@ -3621,7 +3621,6 @@ dependencies = [
  "uuid",
  "webkit2gtk",
  "webview2-com",
- "win7-notifications",
  "windows 0.39.0",
  "zip",
 ]
@@ -4419,16 +4418,6 @@ name = "weezl"
 version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9193164d4de03a926d909d3bc7c30543cecb35400c02114792c2cae20d5e2dbb"
-
-[[package]]
-name = "win7-notifications"
-version = "0.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "82bdf2850c73df6ab8d3284759951a2a8cc4024b06c7d1507d47e19b6127ad79"
-dependencies = [
- "once_cell",
- "windows-sys 0.52.0",
-]
 
 [[package]]
 name = "winapi"
