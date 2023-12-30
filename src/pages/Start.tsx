@@ -32,7 +32,7 @@ const Start = () => {
 
     return (
         <div className="w-full h-full bg-white dark:bg-zinc-900 dark:text-white">
-            <p>actualizado v {version}</p>
+            <p>pre actualizado v {version}</p>
             <br /><br />
             <button onClick={() => navigate('/dashboard')}>
                 To dashboard {lang}
