@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "aura-app",
-    "version": "1.1.5"
+    "version": "1.1.6"
   },
   "tauri": {
     "allowlist": {
@@ -30,6 +30,12 @@
         "message": true,
         "open": true, 
         "save": true
+      },
+      "process": {
+        "all": false,
+        "exit": false,
+        "relaunch": true,
+        "relaunchDangerousAllowSymlinkMacos": false
       },
       "clipboard": {
         "all": true,
