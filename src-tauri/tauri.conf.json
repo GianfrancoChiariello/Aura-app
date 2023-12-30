@@ -7,7 +7,7 @@
   },
   "package": {
     "productName": "aura-app",
-    "version": "1.1.7"
+    "version": "1.1.8"
   },
   "tauri": {
     "allowlist": {
@@ -16,7 +16,7 @@
         "all": true 
       },
       "fs": {
-        "scope": ["$DOWNLOAD/*"]
+        "scope": []
       },
       "app": {
         "all": true,
@@ -81,7 +81,7 @@
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
-        "digestAlgorithm": null,
+        "digestAlgorithm": "sha256",
         "timestampUrl": null,
         "wix": {
           "enableElevatedUpdateTask": false
@@ -95,9 +95,9 @@
       "active": true,
       "endpoints": ["https://gist.githubusercontent.com/GianfrancoChiariello/ee183e7b0cbdfd151fa271f5ffd77c75/raw"],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNGRTU2QTI0QjMyNUYyMzUKUldRMThpV3pKR3JsUHdpRm9WQ2JpS2g0OFNid3N4cEREYmNNTmIzSStqUjZrRm9QYkF0eWFIUnQK",
-      "dialog": false,
+      "dialog": true,
       "windows": {
-        "installMode": "basicUi"
+        "installMode": "passive"
       }
     },
     "windows": [
