@@ -11,13 +11,11 @@ const Start = () => {
     const { t } = useTranslation();
     const { theme, changeTheme,changeLang, lang } = interfaceStore();
 
-
     //Sandbox
-
 
     return (
         <div className="w-full h-full bg-white dark:bg-zinc-900 dark:text-white">
-            <p>actualizado v2</p>
+            <p>actualizado v3</p>
             {theme} <br />
             <button onClick={() => changeTheme()}>
                 {t('test')}
