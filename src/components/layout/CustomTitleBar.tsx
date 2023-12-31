@@ -4,7 +4,7 @@ const CustonTitleBar = () => {
 
   return (
     <div data-tauri-drag-region className="flex items-center justify-between bg-[#111111] w-full pl-3 pr-2 h-8">
-    <div className="text-white font-bold text-xs opacity-90 tracking-widest">Auragile</div>
+    <div className="text-white font-bold text-xs opacity-90 tracking-widest">Aura</div>
     <div className="flex items-center space-x-4">
       <button className="text-white hover:text-gray-400 focus:outline-none"  onClick={() => appWindow?.minimize()}>
         &#x2013; 
