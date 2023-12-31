@@ -9,10 +9,11 @@ import TabC from "../components/settings/Tab";
 import SwitchLang from "../components/settings/component/SwitchLang";
 import { useTranslation } from "react-i18next";
 import { interfaceStore } from "../state/stores/interface.store";
+import SwitchTheme from "../components/settings/component/SwitchTheme";
 
 const Settings = () => {
     const { state } = useLocation();
-    const {lang,changeTheme} = interfaceStore();
+    const {lang, theme} = interfaceStore();
     const {t} = useTranslation();
     const [tabSelected, setTabSelected] = useState(state?.tab || 0);
 
@@ -38,10 +39,9 @@ const Settings = () => {
                 options: [
                     {
                         subTitle: t('theme'),
-                        value: 'Dark',
-                        anchor: '/dist',
-                        component: null,
-                        action: changeTheme,
+                        value: theme,
+                        anchor: null,
+                        component: <SwitchTheme/>,
                         button: t('change')
                     },
                     {
@@ -101,7 +101,7 @@ const Settings = () => {
     return (
         <div className="bg-gray-900 rounded-tl-xl h-full overflow-hidden relative">
             <div className="mx-auto h-full">
-                <div className="bg-[#111623] h-[25vh] w-full top-8">
+                <div className="bg-[#111623] h-[35vh] w-full top-8">
                     <div className="max-w-screen-xl h-full">
                         <div className="max-w-2xl h-full mx-auto flex flex-col justify-end gap-5">
                             <div className="flex items-center gap-8">
@@ -146,7 +146,7 @@ const Settings = () => {
 
                 </div>
                 <div className="overflow-y-auto h-[75vh] scrollbar scrollbar-thumb-rounded-md scrollbar-thumb-gray-800 scrollbar-track-[#111623] scrollbar-small">
-                    <div className="h-[2000px] max-w-screen-xl">
+                    <div className="max-w-screen-xl">
                         <div className="h-full max-w-2xl mx-auto my-8">
                             {
                                 allSettings[tabSelected].map((item, index) => (
