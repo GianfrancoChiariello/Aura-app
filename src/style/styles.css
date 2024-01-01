@@ -11,3 +11,37 @@
         width: 8px;
     }
 }
+
+#box {
+    background-color: white;
+    width: 100%;
+    max-width: 250px;
+    max-height: 150px;
+    height: 70%;
+    position: relative;
+    border-radius: 0 10px 10px 10px;
+  }
+  
+  #box::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 5px;
+    width: 80px;
+    height: 25px;
+    top: -25px;
+  }
+  
+  #box::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid white;
+    border-top-left-radius: 5px;
+    top: -25px;
+    z-index: 2;
+    left: 77px;
+  }
+  
