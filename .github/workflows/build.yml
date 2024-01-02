@@ -2,7 +2,7 @@ name: App Builder
 on:
   push:
     tags:
-      - "v*"
+      - "1.*"
   workflow_dispatch:
 
 jobs:
