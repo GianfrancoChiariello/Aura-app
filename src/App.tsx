@@ -15,19 +15,32 @@ function App() {
 
   const { theme } = interfaceStore();
 
-  const startInstall = (newVersion: String) => {
-    toast.message(`Installing update`, {
-      description: `v${newVersion} - ${Date.UTC.toString}`
-    })
-    installUpdate().then(relaunch);
+  const startInstall = async (newVersion: String) => {
+    console.log(newVersion);
+
+    try {
+      const update = await installUpdate();
+      console.log(update);
+      toast.promise(update as any, {
+        loading: `Installing update v${newVersion} - ${Date.now().toLocaleString()}`,
+        success: () => {
+          relaunch();
+          return `Successfully updated v${newVersion}`
+        }
+      })
+    } catch (error) {
+      toast.error(error as string)
+    }
   }
 
 
   useEffect(() => {
     checkUpdate().then(({ shouldUpdate, manifest }) => {
       console.log(`update?: ${shouldUpdate}`);
+      console.log(manifest);
+      
       if (shouldUpdate) {
-        toast.info(manifest?.body, {
+        toast.info(`${manifest?.body} - ${manifest?.version}`, {
           action: {
             label: 'Ok',
             onClick: () => startInstall(manifest?.version as String)
