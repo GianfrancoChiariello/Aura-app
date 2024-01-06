@@ -1,7 +1,7 @@
 
 const BannerUser = () => {
   return (
-    <div className="w-full h-full grid grid-cols-6 items-center">
+    <div className="w-full h-full grid grid-cols-6 items-center px-4">
         <div className="col-span-6 xl:col-span-4 grid gap-4 justify-center px-2">
             <h3 className="font-semibold text-2xl text-center lg:text-left">Hi Gianfranco</h3>
             <p className="text-lg font-normal text-wrap hidden lg:block">Welcome to principal manager in your enviroment</p>

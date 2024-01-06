@@ -10,6 +10,7 @@ interface interfaceType {
     lang: any,
     changeTheme: (param? : string) => void,
     changeSize: () => void,
+    resetSize: () => void,
     changeLang: (param? : string) => void,
 }
 
@@ -24,6 +25,9 @@ export const interfaceStore = create(
         changeSize: () => {
             set({ sideBar: get().sideBar == '80px' ? '250px' : '80px' })
         },
+        resetSize: () => {
+            set({sideBar: '80px'})
+          },
         changeLang: (param) => {
             i18n.changeLanguage(param)
             set({ lang: param })

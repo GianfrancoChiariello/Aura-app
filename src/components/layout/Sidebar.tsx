@@ -1,20 +1,22 @@
 import { useNavigate } from "react-router-dom"
 import { useLocation } from "react-router-dom"
 import { interfaceStore } from "../../state/stores/interface.store";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Tooltip from '@mui/material/Tooltip';
 import Zoom from '@mui/material/Zoom';
 import Badge from '@mui/material/Badge';
 import { capitalize } from "../../utils/functions";
 import { memo } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Sidebar = memo(({ children }: { children: ReactNode }) => {
 
     const { t } = useTranslation();
     const navigate = useNavigate();
     const { pathname } = useLocation();
-    const { sideBar, changeSize } = interfaceStore();
+    const { sideBar, changeSize, resetSize} = interfaceStore();
+    const match = useMediaQuery('(max-width: 1000px)');
 
     const items = [
         {
@@ -71,16 +73,20 @@ const Sidebar = memo(({ children }: { children: ReactNode }) => {
         }
     ]
 
+    useEffect(() => {
+        match && resetSize();
+    }, [match])
+
     return (
         <div className={`dark:bg-[#111111]  dark:text-white transition-all grid ${sideBar == '80px' ? 'grid-cols-[80px_minmax(80px,_1fr)]' : 'grid-cols-[250px_minmax(250px,_1fr)]'}`}>
             <div className="dark:bg-[#111111] relative">
-                <div className={`absolute top-24 -right-[12px] z-50 rounded-full bg-[#4C6198] p-1 cursor-pointer hover:bg-[#41568C] ${sideBar !== '80px' && 'rotate-180'} transition-all`} onClick={changeSize}>
+                <div className={`absolute top-24 -right-[12px] z-50 rounded-full bg-[#4C6198] p-1 cursor-pointer hover:bg-[#41568C] ${sideBar !== '80px' && 'rotate-180'} transition-all ${!match ? 'block' : 'hidden'}`} onClick={changeSize}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 16 16">
                         <path  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg>
                 </div>
                 <div className="flex flex-col items-start gap-7 min-w-20 overflow-hidden h-full">
-                    <div className="mx-auto cursor-pointer mb-10 mt-2" onClick={changeSize}>
+                    <div className={`mx-auto mb-10 mt-2 ${!match ? 'cursor-pointer' : 'cursor-auto'}`} onClick={!match && changeSize as any}>
                         <img src={'/auragile.svg'} width={78} />
                     </div>
                     <div className="flex flex-col items-start gap-7">
@@ -107,7 +113,7 @@ const Sidebar = memo(({ children }: { children: ReactNode }) => {
                                         </Badge>
                                             </div>
                                     </Tooltip>
-                                    <span className={`ml-3 text-lg font-semibold capitalize text-[#D1D1D1] group-hover:text-white ${item.anchor == pathname && 'text-white'}`}>{item.item}</span>
+                                    <span className={`ml-3 text-lg font-semibold capitalize text-[#D1D1D1] group-hover:text-white ${item.anchor == pathname ? 'text-white' : 'opacity-70'}`}>{item.item}</span>
                                 </div>
                             ))
                         }
