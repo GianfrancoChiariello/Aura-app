@@ -7,9 +7,13 @@
   },
   "package": {
     "productName": "aura-app",
-    "version": "1.1.14"
+    "version": "1.1.15"
   },
   "tauri": {
+    "systemTray": {
+      "iconPath": "icons/icon.ico",
+      "iconAsTemplate": true
+    },
     "allowlist": {
       "all": true,
       "notification": {
@@ -90,10 +94,7 @@
       "active": true,
       "endpoints": ["https://gist.githubusercontent.com/GianfrancoChiariello/ee183e7b0cbdfd151fa271f5ffd77c75/raw"],
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNGRTU2QTI0QjMyNUYyMzUKUldRMThpV3pKR3JsUHdpRm9WQ2JpS2g0OFNid3N4cEREYmNNTmIzSStqUjZrRm9QYkF0eWFIUnQK",
-      "dialog": true,
-      "windows": {
-        "installMode": "passive"
-      }
+      "dialog": false
     },
     "windows": [
       {
