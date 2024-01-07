@@ -7,37 +7,17 @@ import { interfaceStore } from "./state/stores/interface.store";
 import { router } from "./router";
 import { Suspense } from "react";
 import Loading from "./pages/Loading";
-import { checkUpdate, installUpdate } from '@tauri-apps/api/updater';
-import { relaunch } from '@tauri-apps/api/process';
+import { checkUpdate } from '@tauri-apps/api/updater';
 import { Toaster, toast } from 'sonner';
+import { startInstall } from "./utils/tauri.tools";
 
 function App() {
 
   const { theme } = interfaceStore();
 
-  const startInstall = async (newVersion: String) => {
-    console.log(newVersion);
-
-    try {
-      const update = await installUpdate();
-      console.log(update);
-      toast.promise(update as any, {
-        loading: `Installing update v${newVersion} - ${Date.now().toLocaleString()}`,
-        success: () => {
-          relaunch();
-          return `Successfully updated v${newVersion}`
-        }
-      })
-    } catch (error) {
-      toast.error(error as string)
-    }
-  }
-
-
   useEffect(() => {
     checkUpdate().then(({ shouldUpdate, manifest }) => {
-      console.log(`update?: ${shouldUpdate}`);
-      console.log(manifest);
+      console.log(`update?: ${shouldUpdate} --> manifest: { version: ${manifest?.version}, body: ${manifest?.body} }`);
       
       if (shouldUpdate) {
         toast.info(`${manifest?.body} - ${manifest?.version}`, {

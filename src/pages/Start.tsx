@@ -121,7 +121,7 @@ const Start = () => {
                 </div>
             </div>
             <span className="absolute right-0 bottom-0 p-2">
-                    v{version} | {lang}
+                    {version ? `v${version}` : 'Version unserialize'} | {lang}
             </span>
         </div>
     )
