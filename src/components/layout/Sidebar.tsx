@@ -16,7 +16,7 @@ const Sidebar = memo(({ children }: { children: ReactNode }) => {
     const navigate = useNavigate();
     const { pathname } = useLocation();
     const { sideBar, changeSize, resetSize } = interfaceStore();
-    const match = useMediaQuery('(max-width: 1000px)');
+    const match = useMediaQuery('(max-width: 1300px)');
 
     const items = [
         {

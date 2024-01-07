@@ -17,8 +17,7 @@ export const getLocale = async () => {
 
 export const startInstall = async (newVersion: String) => {
     try {
-        const update = await installUpdate();
-        console.log(update);
+        const update = new Promise(resolve => setTimeout(() => resolve(installUpdate()), 1000))
         toast.promise(update as any, {
             loading: `Installing update v${newVersion}`,
             success: () => {
