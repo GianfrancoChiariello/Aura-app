@@ -19,7 +19,7 @@ const Dashboard = () => {
 
 
     return (
-        <div className="rounded-tl-xl dark:bg-[#3A3A3A] grid gap-8 grid-rows-[100px_minmax(190px,_100px)_1fr] pl-8 pr-5 pb-9">
+        <div className="rounded-tl-xl dark:bg-[#3A3A3A] grid gap-5 grid-rows-[70px_minmax(140px,_70px)_1fr] pl-8 pr-5 pb-9 pt-4">
             <div className={`flex justify-between items-center ${sideBar == '80px' ? '2xl:pl-44' : '2xl:pl-16'} transition-all`}>
                 <div className='flex items-center gap-3 bg-[#242424] px-2 py-2 xl:px-3 xl:py-2 rounded-3xl cursor-pointer hover:opacity-95'>
                     <Avatar alt="Remy Sharp" src="" sx={{ width: '30px', height: '30px' }} />
@@ -47,7 +47,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid  lg:grid-cols-11 grid-cols-4 gap-10">
+            <div className="grid lg:grid-cols-11 grid-cols-4 gap-10">
                 <div className="bg-custom-gray col-span-1 lg:col-span-5 rounded-2xl">
                     <BannerUser/>
                 </div>
@@ -63,7 +63,7 @@ const Dashboard = () => {
                     </StepperModal>
                 </div>
             </div>
-            <div className="grid grid-cols-11 grid-rows-2 gap-10">
+            <div className="grid grid-cols-11 grid-rows-2 gap-8">
                 <div className="bg-custom-gray col-span-7 row-span-2 rounded-2xl"></div>
                 <div className="bg-custom-gray col-span-4 rounded-2xl"></div>
                 <div className="bg-custom-gray col-span-4 rounded-2xl"></div>

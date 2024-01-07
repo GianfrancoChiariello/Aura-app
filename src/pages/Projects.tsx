@@ -6,7 +6,7 @@ const Projects = () => {
     return (
         <div className="w-full h-full grid grid-cols-11 bg-[#3A3A3A] rounded-tl-xl overflow-hidden">
             <div className='col-span-11 2xl:col-span-8 overflow-y-scroll scrollbar scrollbar-thumb-gray-800 scrollbar-track-gray-600 scrollbar-small h-full pb-12'>
-                <div className=" grid grid-rows-11 w-full px-12 2xl:px-0 2xl:max-w-[75%] mx-auto">
+                <div className="grid grid-rows-11 w-full px-12 2xl:px-0 2xl:max-w-[80%] mx-auto">
                     <div className="row-span-1 flex justify-start items-center font-semibold text-xl">
                         Welcome Gianfranco´s!
                     </div>

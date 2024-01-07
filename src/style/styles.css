@@ -30,7 +30,7 @@
     border-top-right-radius: 5px;
     width: 80px;
     height: 25px;
-    top: -25px;
+    top: -24px;
   }
   
   #box::before {
@@ -40,7 +40,7 @@
     border-right: 25px solid transparent;
     border-bottom: 25px solid white;
     border-top-left-radius: 5px;
-    top: -25px;
+    top: -24px;
     z-index: 2;
     left: 77px;
   }
