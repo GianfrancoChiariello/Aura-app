@@ -3,38 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { getVersion } from '@tauri-apps/api/app';
 import { useState, useEffect } from "react";
 import { FormControlLabel, Checkbox, TextField, Divider } from "@mui/material";
-import { makeStyles } from "@mui/styles";
-
-const focusedColor = "#ABABAB";
-const useStyles = makeStyles(() => ({
-    root: {
-        "& label.Mui-focused": {
-            color: focusedColor
-        },
-        "& .MuiInput-underline:after": {
-            borderBottomColor: focusedColor
-        },
-        "& .MuiFilledInput-underline:after": {
-            borderBottomColor: focusedColor
-        },
-        "& .MuiOutlinedInput-root": {
-            color: 'white',
-            opacity: '.8',
-            "&.Mui-focused fieldset": {
-                borderColor: focusedColor
-            }
-        },
-        "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#4D4D4D"
-        },
-        "&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#ABABAB"
-        },
-        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#ABABAB"
-        },
-    }
-}));
 
 const Start = () => {
     const navigate = useNavigate();
@@ -51,8 +19,6 @@ const Start = () => {
     }, [])
 
 
-    const classes = useStyles();
-
     return (
         <div className="w-full h-full bg-white dark:bg-[#111111] dark:text-white flex justify-center items-center bg-[url('/assets/gradient.svg')] bg-no-repeat">
             <div className="flex flex-col items-center justify-center max-w-[548px] text-center">
@@ -65,12 +31,10 @@ const Start = () => {
                 <div className="flex flex-col gap-4 w-full mb-3">
                     <TextField
                         fullWidth
-                        className={classes.root}
                         placeholder="Username or Email"
                     />
                     <TextField
                         fullWidth
-                        className={classes.root}
                         placeholder="Password"
                     />
                 </div>
