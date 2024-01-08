@@ -15,6 +15,7 @@ export default {
     extend: {
       colors: {
         'custom-gray':'#555555',
+        primary: '#4C6198'
       }
     },
   },

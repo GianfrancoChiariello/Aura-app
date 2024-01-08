@@ -1,18 +1,16 @@
-import AvatarGroup from '@mui/material/AvatarGroup';
-import { IconButton,Avatar } from '@mui/material';
+import {Avatar, AvatarGroup} from "@nextui-org/react";
 
 const OnlineUsers = () => {
     return (
         <>
-            <IconButton type="button" sx={{ p: '5px', color: 'whitesmoke', borderRadius: '15px' }} aria-label="notification">
-                <AvatarGroup max={4}>
-                    <Avatar alt="Remy Sharp" src="" />
-                    <Avatar alt="Travis Howard" src="" />
-                    <Avatar alt="Cindy Baker" src="" />
-                    <Avatar alt="Agnes Walker" src="" />
-                    <Avatar alt="Trevor Henderson" src="" />
-                </AvatarGroup>
-            </IconButton>
+    <AvatarGroup isBordered max={3} color="primary">
+      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+      <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+      <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+      <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+      <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+      <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+    </AvatarGroup>
         </>
     )
 }
