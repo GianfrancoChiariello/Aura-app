@@ -7,7 +7,7 @@ const BannerUser = () => {
             <p className="text-lg font-normal text-wrap hidden 2xl:block">Welcome to manager in your enviroment</p>
             <span className="text-lg text-center lg:text-left">Your score: <h2 className="inline font-extrabold text-4xl text-[#99FC03]">A+</h2></span>
         </div>
-        <div className="col-span-2 bg-[url('/assets/bitMoji.png')] h-full w-full bg-center hidden lg:block bg-cover bg-no-repeat"/>
+        <div className="col-span-2 bg-[url('/assets/bitMoji.png')] h-full w-full 2xl:max-w-[90%] bg-center hidden lg:block bg-cover bg-no-repeat"/>
     </div>
   )
 }

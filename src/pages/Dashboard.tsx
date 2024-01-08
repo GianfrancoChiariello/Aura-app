@@ -1,4 +1,3 @@
-import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
@@ -10,9 +9,7 @@ import BannerUser from '../components/dashboard/BannerUser';
 import Box from '../components/dashboard/Box';
 import StepperModal from '../components/layout/StepperModal';
 import { useState } from 'react';
-import { Select, SelectItem, Divider } from "@nextui-org/react";
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-
+import { Select, SelectItem, Divider, Avatar, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User,Skeleton } from "@nextui-org/react";
 
 const Dashboard = () => {
 
@@ -25,10 +22,43 @@ const Dashboard = () => {
     return (
         <div className="rounded-tl-xl dark:bg-[#3A3A3A] grid gap-5 grid-rows-[70px_minmax(140px,_70px)_1fr] pl-8 pr-5 pb-9 pt-4">
             <div className={`flex justify-between items-center ${sideBar == '80px' ? '2xl:pl-44' : '2xl:pl-16'} transition-all`}>
-                <div className='flex items-center gap-3 bg-[#242424] px-2 py-2 xl:px-3 xl:py-2 rounded-3xl cursor-pointer hover:opacity-95'>
-                    <Avatar alt="Remy Sharp" src="" sx={{ width: '30px', height: '30px' }} />
-                    <span className="hidden xl:block">Enviroment</span>
-                </div>
+                <Select
+                    placeholder="Enviroment"
+                    startContent={<Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" className='w-16' />}
+                    className="max-w-44"
+                    classNames={{
+                        label: "group-data-[filled=true]:-translate-y-5 border border-red-400",
+                        trigger: "p-2 bg-[#242424] rounded-2xl hover:bg-[#242424]",
+                        listboxWrapper: "bg-[#242424] max-w-[90%] rounded-b-lg",
+                    }}
+                    listboxProps={{
+                        itemClasses: {
+                            base: [
+                                "text-default-500",
+                                "data-[hover=true]:text-foreground",
+                                "data-[hover=true]:bg-red-500",
+                                "dark:data-[hover=true]:bg-red-500",
+                                "data-[selectable=true]:focus:bg-[#242424]",
+                                "data-[selectable=true]:focus:text-white",
+                                "data-[pressed=true]:opacity-70",
+                                "data-[focus-visible=true]:bg-blue-500",
+                            ],
+                        },
+                    }}
+                    popoverProps={{
+                        classNames: {
+                            base: "before:bg-red-200  shadow-none -top-2",
+                            content: "p-0 shadow-none bg-transparent ",
+                        },
+                    }}
+                >
+                    <SelectItem key={1} value={"1"}>
+                        Marketing
+                    </SelectItem>
+                    <SelectItem key={2} value={"2"}>
+                        Development
+                    </SelectItem>
+                </Select>
                 <div className='border-b-2 border-[#97F704] cursor-pointer hover:opacity-90'>Dashboard</div>
                 <div>
                     <SearchBar />
@@ -45,9 +75,35 @@ const Dashboard = () => {
                     </IconButton>
                 </div>
                 <div>
-                    <div className='flex items-center gap-3 bg-[#242424] px-3 py-2 rounded-3xl cursor-pointer hover:opacity-95' onClick={() => navigate('/settings', { state: { tab: 0 } })}>
-                        Gianfranco
-                        <Avatar alt="Remy Sharp" src="" sx={{ width: '30px', height: '30px' }} />
+                    <div className='flex items-center gap-3 bg-[#242424] px-3 py-2 rounded-3xl cursor-pointer hover:opacity-95'>
+                        <Dropdown placement="bottom-start">
+                            <DropdownTrigger>
+                                <User
+                                    as="button"
+                                    avatarProps={{
+                                        isBordered: true,
+                                        src: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+                                    }}
+                                    className="transition-transform"
+                                    description="@gianch"
+                                    name="Gianfranco Chiariello"
+                                />
+                            </DropdownTrigger>
+                            <DropdownMenu aria-label="User Actions" variant="flat">
+                                <DropdownItem key="profile" className="h-14 gap-2">
+                                    <p className="font-bold">Signed in as</p>
+                                    <p className="font-bold">@gianch</p>
+                                </DropdownItem>
+                                <DropdownItem key="settings" onClick={() => navigate('/settings', { state: { tab: 0 } })}>
+                                    My Settings
+                                </DropdownItem>
+                                <DropdownItem key="system">System</DropdownItem>
+                                <DropdownItem key="configurations">Configurations</DropdownItem>
+                                <DropdownItem key="logout" color="danger" href='/'>
+                                    Log Out
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                     </div>
                 </div>
             </div>
@@ -72,30 +128,15 @@ const Dashboard = () => {
                     <div className="px-4">
                         <div className='flex justify-between items-center pt-4'>
                             <h2 className='font-semibold text-2xl pl-2 pb-2'>{project} Stadistics</h2>
-                            <Select
-                                placeholder="Projects"
-                                startContent={<AccountTreeIcon />}
-                                className="max-w-32"
-                                popoverProps={{
-                                    classNames: {
-                                        base: "before:bg-black",
-                                        content: "p-0 border-small border-divider bg-background",
-                                    },
-                                }}
-                            >
-                                <SelectItem key={1} value={"1"}>
-                                    1
-                                </SelectItem>
-                            </Select>
                         </div>
                         <Divider className="my-2 bg-[#6C7A9F]" />
                     </div>
                     <div className='grid grid-cols-8 grid-rows-2 h-full gap-4 p-4 pt-0'>
-                        <div className="border border-red-400 col-span-4 rounded-xl"></div>
-                        <div className="border border-red-400 col-span-2 rounded-xl"></div>
-                        <div className="border border-red-400 col-span-2 rounded-xl"></div>
-                        <div className="border border-red-400 col-span-6 rounded-xl"></div>
-                        <div className="border border-red-400 col-span-2 rounded-xl"></div>
+                        <Skeleton className="col-span-4 rounded-xl" isLoaded={false}></Skeleton>
+                        <Skeleton className="col-span-2 rounded-xl" isLoaded={false}></Skeleton>
+                        <Skeleton className="col-span-2 rounded-xl" isLoaded={false}></Skeleton>
+                        <Skeleton className="col-span-6 rounded-xl" isLoaded={false}></Skeleton>
+                        <Skeleton className="col-span-2 rounded-xl" isLoaded={false}></Skeleton>
                     </div>
                 </div>
                 <div className="bg-custom-gray col-span-4 rounded-2xl"></div>

@@ -2,7 +2,7 @@ import { interfaceStore } from "../state/stores/interface.store"
 import { useNavigate } from 'react-router-dom'
 import { getVersion } from '@tauri-apps/api/app';
 import { useState, useEffect } from "react";
-import { FormControlLabel, Checkbox, TextField, Divider } from "@mui/material";
+import { Input, Checkbox, Divider } from "@nextui-org/react";
 
 const Start = () => {
     const navigate = useNavigate();
@@ -29,44 +29,33 @@ const Start = () => {
                     We are excited to have your back. Log in now and access your account.
                 </p>
                 <div className="flex flex-col gap-4 w-full mb-3">
-                    <TextField
-                        fullWidth
+                    <Input
+                        radius={'sm'}
+                        type="text"
                         placeholder="Username or Email"
                     />
-                    <TextField
-                        fullWidth
+                    <Input
+                        radius={'sm'}
+                        type="password"
                         placeholder="Password"
                     />
                 </div>
                 <div className="w-full flex justify-between items-center mb-12">
-                    <FormControlLabel control={
-                        <Checkbox
-                            defaultChecked
-                            sx={{
-                                color: '#7177FF',
-                                '&.Mui-checked': {
-                                    color: '#7177FF',
-                                },
-                            }}
-                        />}
-                        label="Remember me"
-                    />
+                    <Checkbox
+                        defaultSelected
+                    >
+                        Remember me
+                    </Checkbox>
                     <a>Forgot your password?</a>
                 </div>
                 <div className="w-full">
-                    <div className="w-full p-3 mb-8 bg-gradient-to-l from-indigo-500 rounded-sm cursor-pointer hover:opacity-90" onClick={() => navigate('/dashboard')}>
+                    <div className="w-full p-3 mb-4 bg-gradient-to-l from-indigo-500 rounded-sm cursor-pointer hover:opacity-90" onClick={() => navigate('/dashboard')}>
                         <h2>Log In</h2>
                     </div>
 
-                    <Divider sx={{
-                        width: '100%',
-                        color: 'white',
-                        opacity: '.8',
-                        margin: '0 0 24px 0',
-                        "&::before, &::after": {
-                            borderColor: "#4D4D4D",
-                        },
-                    }}>or</Divider>
+                    <div className="flex items-center gap-2 my-4 mx-auto w-full">
+                        <Divider className="my-2 bg-[#6C7A9F] max-w-48"/>Or<Divider className="my-2 bg-[#6C7A9F] max-w-48" />
+                    </div>
                     <div className="w-full border border-gray-700 p-3 mb-8 rounded-sm group cursor-pointer">
                         <svg className="mx-auto group-hover:opacity-85" width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_379_4691)">
@@ -85,7 +74,7 @@ const Start = () => {
                 </div>
             </div>
             <span className="absolute right-0 bottom-0 p-2">
-                    {version ? `v${version}` : 'Version unserialize'} | {lang}
+                {version ? `v${version}` : 'Version unserialize'} | {lang}
             </span>
         </div>
     )
